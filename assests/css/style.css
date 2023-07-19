@@ -28,7 +28,7 @@ body
     height: 500px;
     display: flex;
     flex-direction: row;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 15px 40px;
 }
 .control
 {
@@ -43,23 +43,24 @@ body
 
 input[type='color']
 {
-    width: 80px;
+    width: 200px;
+    height: 50px;
     border:none;
-    height: 80px;
     transition-duration: 0.2s;
 }
 input[type='color']:hover, .btn-action:hover
 {
     scale: 110%;
+    box-shadow: 1px 2px 12px #797979;
 }
 .btn-action
 {
     border:1px solid #797979;
     padding: 12px;
     min-width: 200px;
-    box-shadow: 1px 2px 12px #797979;
     font-weight: 400;
     color: black;
+    box-shadow: 1px 1px 5px #797979;
     transition-duration: 0.2s;
 
 }
