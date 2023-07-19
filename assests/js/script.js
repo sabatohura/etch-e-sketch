@@ -21,4 +21,14 @@ const setCurrentColor = newColor => current_color=newColor;
 const setCurrentMode  = newMode => current_mode=newMode;
 const setCurrentGridSize = newGridSize => current_grid=newGridSize;
 
+const resetSketch = ()=>{
+    flushGrid();
+    // setupGrid(default_grid_size);
+}
 
+const flushGrid=()=>{gridField.innerHTML=''}
+
+colorChoice.oninput = e => setCurrentColor(e.target.value);
+colorMode.addEventListener('click', ()=> setCurrentMode('color'));
+EraserMode.addEventListener('click', ()=> setCurrentMode('erase'));
+reset.addEventListener('click', ()=> resetSketch());
