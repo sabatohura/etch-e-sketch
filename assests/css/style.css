@@ -66,3 +66,8 @@ input[type='color']:hover, .btn-action:hover
     transition-duration: 0.2s;
 
 }
+.active
+{
+    background-color: black;
+    color: white;
+}
