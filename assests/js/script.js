@@ -32,3 +32,13 @@ colorChoice.oninput = e => setCurrentColor(e.target.value);
 colorMode.addEventListener('click', ()=> setCurrentMode('color'));
 EraserMode.addEventListener('click', ()=> setCurrentMode('erase'));
 reset.addEventListener('click', ()=> resetSketch());
+sizeSelector.onmousemove = e => updateSizeValue(e.target.value); 
+sizeSelector.onchange = e => changeSize(e.target.value);
+
+const changeSize =value=>{
+    setCurrentGridSize(value)
+    updateSizeValue(value)
+    resetSketch();
+}
+
+const updateSizeValue=value=>sizeRange.innerHTML = value;
