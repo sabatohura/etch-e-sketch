@@ -27,6 +27,12 @@ const resetSketch = ()=>{
 }
 const flushGrid=()=>gridField.innerHTML='';
 
+function resetGrid()
+{
+  updateSizeValue(default_grid_size)
+  changeSize(default_grid_size)
+  sizeSelector.value(default_grid_size)
+}
 
 colorChoice.oninput = e => setCurrentColor(e.target.value);
 colorMode.addEventListener('click', ()=> setCurrentMode('color'));
@@ -56,10 +62,10 @@ const setupGrid=(size)=>{
   }
 
   function changeColor(e) {
-    if (e.type === 'mouseover' && !mouseDown) return
-    if (current_mode === 'color') {
+    if (e.type == 'mouseover' && !mouseDown) return
+    if (current_mode == 'color') {
       e.target.style.backgroundColor = current_color
-    } else if (current_mode === 'erase') {
+    } else if (current_mode == 'erase') {
       e.target.style.backgroundColor = '#fefefe'
     }
   }
@@ -71,9 +77,9 @@ const setupGrid=(size)=>{
         EraserMode.classList.add('active')
     }
   
-    if (newMode === 'color') {
+    if (newMode == 'color') {
         colorMode.classList.add('active')
-    } else if (newMode === 'erase') {
+    } else if (newMode == 'erase') {
         EraserMode.classList.add('active')
     }
   }
