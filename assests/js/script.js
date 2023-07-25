@@ -34,7 +34,7 @@ const draw = () => {
 
 const changeColor = e => e.target.style.backgroundColor = newColor;
 
-const setColorMode = () => {  
+const setColorMode = () => { 
   draw()
 };
 
