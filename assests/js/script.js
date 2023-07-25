@@ -25,6 +25,7 @@ const draw = () => {
     board.appendChild(gridElement)
   }
 };
+const changeColor = e => e.target.style.backgroundColor = newColor;
 
 const setColorMode = () => {
   drawMode = !drawMode;
@@ -44,4 +45,3 @@ window.onload =()=>{
   setGridSize(default_grid_size);
 }
 
-const changeColor = e => e.target.style.backgroundColor = newColor;
