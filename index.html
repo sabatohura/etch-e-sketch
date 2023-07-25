@@ -13,13 +13,13 @@
         </div>
         <div class="content">
             <div class="control">
-                <input type="color" name="color" id="colorChoice" onchange="changeColor(this.value)">
-                <div class="btn-action" id="colorMode">Color Mode</div>
-                <div class="btn-action" id="EraserMode"  onclick="changeColor('white')">Eraser</div>
+                <input type="color" name="color" id="colorChoice" onchange="setColor(this.value)">
+                <div class="btn-action" id="EraserMode"  onclick="setColor('white')">Eraser</div>
                 <div class="btn-action" id="reset" onclick="resetGrid()">Reset</div>
+                <div class="btn-action" id="colorMode" onclick="setColorMode()">Color Mode off</div>
                 <div class="btn-action" id="rangeDiv">
                     <div id=""><span id="sizeRange">10</span> Grid(s)</div>
-                    <input id="sizeSelector" type="range" value="10" min="1" max="100" onchange="changeSize(this.value)"/>
+                    <input id="sizeSelector" type="range" value="10" min="1" max="100" onchange="setGridSize(this.value)"/>
                 </div>
             </div>
             <div class="board" id="board"></div>
