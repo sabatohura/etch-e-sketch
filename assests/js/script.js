@@ -1,18 +1,18 @@
 // defaults 
 const default_grid_size = 10;
 const default_color = '#000000';
-let drawMode = false;
+// let drawMode = false;
 
 // DOM objects
 const board = document.getElementById('board');
-const sizeRange = document.getElementById("sizeRange")
+const sizeRange = document.getElementById("sizeRange");
+const colorModeBtn = document.getElementById('colorMode');
 
 // functions 
 const setColor    = value => newColor=value;
 const resetGrid   = () => window.onload();
 const onGridSizeChanged =(value)=>{
   resetGrid();
-  drawMode = false;
   setGridSize(value);
   setColorMode();
 }
@@ -31,26 +31,19 @@ const draw = () => {
     board.appendChild(gridElement)
   }
 };
-const unDraw =() =>{
-  setColor('not a color');
-}
+
 const changeColor = e => e.target.style.backgroundColor = newColor;
 
-const setColorMode = () => {
-  drawMode = !drawMode;
-  if(drawMode == true)
-    {
-      document.getElementById('colorMode').innerHTML = 'Stop fill Color'
-      draw();
-    }
-    else{
-      document.getElementById('colorMode').innerHTML = 'Resume fill Color'
-      unDraw();
-    }
+const setColorMode = () => {  
+  draw()
 };
 
+const pauseColorMode = ()=> {
+  setColor('not a color');
+}
 window.onload =()=>{
   board.innerHTML = '';
+  drawMode = false;
   setColor(default_color);
   setGridSize(default_grid_size);
 }
