@@ -12,8 +12,9 @@ const setColor    = value => newColor=value;
 const resetGrid   = () => window.onload();
 const setGridSize = value => newSize = value;
 
+sizeRange.innerHTML = newSize;
+
 const draw = () => {
-  sizeRange.innerHTML = newSize;
   board.style.gridTemplateColumns = `repeat(${newSize}, 1fr)`
   board.style.gridTemplateRows = `repeat(${newSize}, 1fr)`
 
